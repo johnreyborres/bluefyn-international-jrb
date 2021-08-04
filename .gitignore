@@ -2,3 +2,7 @@ vendor
 node_modules
 **/.DS_Store
 .idea
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+.phpunit.result.cache
