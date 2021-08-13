@@ -19,6 +19,7 @@ class CreateSalesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('quantity');
             $table->decimal('cost', 16, 2);
+            $table->decimal('commission', 16, 2)->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

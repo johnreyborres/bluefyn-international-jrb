@@ -22,7 +22,7 @@ Route::group([
     Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])
         ->name('index');
 
-    Route::get('/', [\App\Http\Controllers\SalesController::class, 'input'])
+    Route::get('/sales/input', [\App\Http\Controllers\SalesController::class, 'input'])
         ->name('sales.input');
 });
 
