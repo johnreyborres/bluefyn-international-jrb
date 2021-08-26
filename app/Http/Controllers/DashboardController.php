@@ -8,6 +8,8 @@ class DashboardController extends Controller
 {
     public function index() : View
     {
-        return view('dashboard');
+        $totalCommissions = auth()->user()->sales->sum('commission');
+
+        return view('dashboard')->with(['totalCommissions' => $totalCommissions]);
     }
 }

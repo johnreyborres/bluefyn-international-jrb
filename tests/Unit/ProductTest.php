@@ -15,6 +15,6 @@ class ProductTest extends TestCase
             'commission' => 1.5,
         ]);
 
-        $this->assertEquals(0.0315, $product->commissionAmount);
+        $this->assertEquals(0.0315, $product->commission_amount);
     }
 }

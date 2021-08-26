@@ -8,11 +8,11 @@ class Product extends BaseModel
 {
     public function getCommissionAmountAttribute() : float
     {
-        return $this->cost * $this->commission;
+        return $this->cost * ($this->commission / 100);
     }
 
     public function sales() : HasMany
     {
-        return $this->hasMany(Sale::class, 'product_id', 'id');
+        return $this->hasMany(Sale::class);
     }
 }

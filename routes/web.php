@@ -16,14 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'middleware' => 'auth',
 ], function () {
-    Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])
-        ->name('dashboard');
+    // Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])
-        ->name('index');
-
-    Route::get('/sales/input', [\App\Http\Controllers\SalesController::class, 'input'])
-        ->name('sales.input');
+    // Sales
+    Route::resource('sales', App\Http\Controllers\SalesController::class, ['only' => ['create', 'store']]);
 });
 
 require __DIR__.'/auth.php';

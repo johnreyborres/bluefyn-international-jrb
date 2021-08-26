@@ -37,6 +37,6 @@ class User extends Authenticatable
 
     public function sales() : HasMany
     {
-        return $this->hasMany(Sale::class, 'user_id', 'id');
+        return $this->hasMany(Sale::class);
     }
 }
